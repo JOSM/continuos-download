@@ -1,5 +1,5 @@
+// License: GPL. For details, see LICENSE file.
 package org.openstreetmap.josm.plugins.continuosDownload;
-
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -51,9 +51,11 @@ class BoxStrategyTest {
          * box some distance away.
          */
         ArrayList<Box> set = new ArrayList<>();
-        for (int i = 0; i < 5; i++)
-            for (int j = 0; j < 5; j++)
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
                 set.add(new Box(i * 3, j * 3, i * 3 + 2, j * 3 + 2));
+            }
+        }
         set.add(new Box(-10, -10, -9, -9));
 
         long t0 = System.currentTimeMillis();

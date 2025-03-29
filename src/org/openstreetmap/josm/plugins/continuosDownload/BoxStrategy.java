@@ -1,4 +1,4 @@
-// License: GPL. See LICENSE file for details.
+// License: GPL. For details, see LICENSE file.
 package org.openstreetmap.josm.plugins.continuosDownload;
 
 import java.util.ArrayList;
@@ -10,6 +10,9 @@ import java.util.PriorityQueue;
 import org.openstreetmap.josm.data.Bounds;
 import org.openstreetmap.josm.data.coor.LatLon;
 
+/**
+ * Box based download strategy.
+ */
 public class BoxStrategy extends AbstractDownloadStrategy {
 
     @Override
@@ -34,7 +37,7 @@ public class BoxStrategy extends AbstractDownloadStrategy {
         // Sort the set from largest to smalest, there is a better chance of
         // getting good pactitions if you start with the biggest boxes because
         // the smaller boxes have little impact on the overall score.
-		Collections.sort(list, Comparator.comparingDouble(Box::size).reversed());
+        Collections.sort(list, Comparator.comparingDouble(Box::size).reversed());
 
         PriorityQueue<Partition> q = new PriorityQueue<>();
         q.add(new Partition());

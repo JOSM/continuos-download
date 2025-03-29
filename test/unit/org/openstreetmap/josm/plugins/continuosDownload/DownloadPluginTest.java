@@ -106,16 +106,17 @@ class DownloadPluginTest {
         assertTrue(workerFinished.get());
     }
 
-    private static class OsmServerReaderOsmAPIExceptionMock extends MockUp<OsmServerReader> {
+    private static final class OsmServerReaderOsmAPIExceptionMock extends MockUp<OsmServerReader> {
         LongAdder hit = new LongAdder();
         @Mock
         protected InputStream getInputStream(String urlStr, ProgressMonitor progressMonitor) throws OsmTransferException {
             hit.add(1);
-            throw new OsmApiException(400, "You requested too many nodes (limit is 50000). Either request a smaller area, or use planet.osm", "", "", null, "xml");
+            throw new OsmApiException(400, "You requested too many nodes (limit is 50000). Either request a smaller area, or use planet.osm",
+                "", "", null, "xml");
         }
     }
 
-    private static class ComponentMock extends MockUp<Component> {
+    private static final class ComponentMock extends MockUp<Component> {
         @Mock
         public Rectangle getBounds() {
             return new Rectangle(0, 0, 100, 100);

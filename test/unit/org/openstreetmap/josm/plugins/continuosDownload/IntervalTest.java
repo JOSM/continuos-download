@@ -1,5 +1,5 @@
+// License: GPL. For details, see LICENSE file.
 package org.openstreetmap.josm.plugins.continuosDownload;
-
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -20,6 +20,7 @@ class IntervalTest {
         assertFalse(new Interval(0, 1).contains(-1));
         assertFalse(new Interval(0, 1).contains(2));
     }
+
     @Test
     void testValid() {
         assertTrue(new Interval(0, 1).valid());

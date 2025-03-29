@@ -1,4 +1,4 @@
-// License: GPL. See LICENSE file for details.
+// License: GPL. For details, see LICENSE file.
 package org.openstreetmap.josm.plugins.continuosDownload;
 
 import static org.openstreetmap.josm.tools.I18n.tr;
@@ -71,6 +71,7 @@ public class DownloadPlugin extends Plugin implements ZoomChangeListener, Destro
         // This ensures that threads will be destroyed when not used.
         ((ThreadPoolExecutor) worker).allowCoreThreadTimeOut(true);
     }
+
     private Timer timer;
     private TimerTask task;
     private Bounds lastBbox;
@@ -84,7 +85,7 @@ public class DownloadPlugin extends Plugin implements ZoomChangeListener, Destro
      * Constructs a new {@code DownloadPlugin}.
      * @param info plugin info
      */
-    public DownloadPlugin(PluginInformation info) {
+    DownloadPlugin(PluginInformation info) {
         super(info);
         active = Config.getPref().getBoolean("plugin.continuos_download.active_default", true);
 
@@ -208,7 +209,7 @@ public class DownloadPlugin extends Plugin implements ZoomChangeListener, Destro
     private class Task extends TimerTask {
         private final Bounds bbox;
 
-        public Task(Bounds bbox) {
+        Task(Bounds bbox) {
             this.bbox = bbox;
         }
 
@@ -227,7 +228,7 @@ public class DownloadPlugin extends Plugin implements ZoomChangeListener, Destro
 
         private final transient Collection<ButtonModel> buttonModels;
 
-        public ToggleAction() {
+        ToggleAction() {
             super(tr("Download OSM data continuously"), "continuous-download",
                     tr("Download map data continuously when paning and zooming."), Shortcut.registerShortcut(
                             "continuosdownload:activate", tr("Toggle the continuous download on/off"), KeyEvent.CHAR_UNDEFINED,

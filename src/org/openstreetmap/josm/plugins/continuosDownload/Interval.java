@@ -1,8 +1,11 @@
-// License: GPL. See LICENSE file for details.
+// License: GPL. For details, see LICENSE file.
 package org.openstreetmap.josm.plugins.continuosDownload;
 
 import java.util.Objects;
 
+/**
+ * An interval of two values (min, max).
+ */
 public class Interval {
     public long min, max;
 
