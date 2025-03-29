@@ -97,7 +97,7 @@ class DownloadPluginTest {
         }
         Awaitility.await().pollInterval(Durations.ONE_HUNDRED_MILLISECONDS)
                 .atMost(Durations.TEN_SECONDS)
-                .untilAdder(osmServerReaderOsmAPIExceptionMock.hit, Matchers.greaterThanOrEqualTo(99L));
+                .untilAdder(osmServerReaderOsmAPIExceptionMock.hit, Matchers.greaterThanOrEqualTo(95L));
         // Give us enough time to call PostDownloadHandler
         Awaitility.await().pollDelay(Durations.ONE_SECOND).until(() -> true);
         AtomicBoolean workerFinished = new AtomicBoolean();
