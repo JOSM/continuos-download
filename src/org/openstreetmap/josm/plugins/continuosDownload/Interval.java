@@ -28,7 +28,7 @@ public class Interval {
     }
 
     public Interval intersection(Interval x) {
-        return new Interval(Math.max(min, x.min), Math.min(max, x.max));
+        return new Interval(/* min = */Math.max(min, x.min), /* max = */Math.min(max, x.max));
     }
 
     public boolean contains(long d) {
