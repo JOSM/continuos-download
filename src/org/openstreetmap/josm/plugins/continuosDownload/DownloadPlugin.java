@@ -85,7 +85,7 @@ public class DownloadPlugin extends Plugin implements ZoomChangeListener, Destro
      * Constructs a new {@code DownloadPlugin}.
      * @param info plugin info
      */
-    DownloadPlugin(PluginInformation info) {
+    public DownloadPlugin(PluginInformation info) {
         super(info);
         active = Config.getPref().getBoolean("plugin.continuos_download.active_default", true);
 

@@ -62,6 +62,9 @@ public class BoxStrategy extends AbstractDownloadStrategy {
         return null;
     }
 
+    /**
+     * Base storage class of the box strategy
+     */
     @SuppressWarnings("NonApiType")
     public static class Partition implements Comparable<Partition> {
         ArrayList<Box> box; // The merged boxes
